@@ -64,17 +64,31 @@ if "%forensics%"=="n" (
     echo "&&&&&&&&&/..   . .. .    .  .,,, .   .  .. ..  .. ....   ...  .,..... ./&&&&&&&"
     echo "&(. . . . .. .   .. .. . .......    .      . ...  ... .      ... .............*"
     echo ". ... .  ..  .   ... .    .  ...   .  .  . . .  ..     . .  ..,..,............."
-    echo "#-----------------------------------------------------------------------------#"
-    echo "#                     BarbraRedPanda CyberPatriot Script                      #"
-    echo "#-----------------------------------------------------------------------------#"
-    echo "#                            'We like fortnite'                               #"
-    echo "#                     -Tyler 'Fortnite' 'Ninja' Blevins                       #"
-    echo "#-----------------------------------------------------------------------------#"
-    echo "#      (0) password policy  (1) lockout policy  (2) audit (3) firewall        #"
-    echo "#      (4) hidden folders   (5) remote console  (6) remote access             #"
-    echo "#      (7) guest/admin      (8) telnet          (9) findBad                   #"
-    echo "#-----------------------------------------------------------------------------#"
+    echo #-------------------------------------------------------------------------------#
+    echo #-                     BarbraRedPanda CyberPatriot Script                      -#
+    echo #-------------------------------------------------------------------------------#
+    echo #-                            'We like fortnite'                               -#
+    echo #-                     -Tyler 'Fortnite' 'Ninja' Blevins                       -#
+    echo #-------------------------------------------------------------------------------#
+    echo #       (0) password policy  (1) lockout policy  (2) audit (3) firewall         #
+    echo #       (4) hidden folders   (5) remote console  (6) remote access              #
+    echo #       (7) guest/admin      (8) telnet          (9) findBad                    #
+    echo #-------------------------------------------------------------------------------#
     set /p choice=choose an option: 
+        timeout /t 1
+        echo hackign into the mainfraime and intitiaigng feorntie boirger bprotogocals.
+        timeout /t 1
+        echo hackign into the mainfraime and intitiaigng feorntie boirger bprotogocals..
+        timeout /t 1
+        echo hackign into the mainfraime and intitiaigng feorntie boirger bprotogocals...
+        timeout /t 1
+        echo hackign into the mainfraime and intitiaigng feorntie boirger bprotogocals..
+        timeout /t 1
+        echo hackign into the mainfraime and intitiaigng feorntie boirger bprotogocals.
+        timeout /t 1
+        goto :trollface
+        :back
+        cls
         if "%choice%"=="0" goto :passPol
         if "%choice%"=="1" goto :lockPol
         if "%choice%"=="2" goto :audit
@@ -92,9 +106,13 @@ if "%forensics%"=="n" (
     net accounts /MAXPWAGE:30
     net accounts /MINPWAGE:15
     net accounts /UNIQUEPW:24
-    Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled true
-    Set-ADDefaultDomainPasswordPolicy -ReversibleEncryptionEnabled false
-    Set-ADDefaultDomainPasswordPolicy -PasswordHistoryCount 24
+
+    rem finds and uses pass.cfg to enable complexity requirements
+    dir pass.cfg /b/s/a/d | set passLoc=
+    secedit.exe /configure /cfg %passLoc% /areas SECURITYPOLICY
+    rem Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled true
+    rem Set-ADDefaultDomainPasswordPolicy -ReversibleEncryptionEnabled false
+    rem Set-ADDefaultDomainPasswordPolicy -PasswordHistoryCount 24
     pause   
     goto :launch
 
@@ -159,7 +177,7 @@ if "%forensics%"=="n" (
     goto :launch
 
 :telnet
-    DISM /online /disable-feature /featurename:TelnetClient
+    DISM  /online /disable-feature /featurename:TelnetClient
     DISM /online /disable-feature /featurename:TelnetServer
     sc stop "TlntSvr"
     sc config "TlntSvr" start= disabled
@@ -168,7 +186,59 @@ if "%forensics%"=="n" (
 
 :findBad
     cd C:/Users/
-    rem very weird way of writing the paths and names of any files in a new file on the desktop
+    rem very weird way of writing the paths of any files in a new file on the desktop
     dir *.png  *.jpg  *.jpeg  *.mp3  *.mp4  *.gif  *.mov  *.wav  *.img  *.webp  *.ac3  *.aac  *.aiff  *.flac  *.m4a  *.m4p  *.midi  *.exe  *.mp2  *.avi  *.wma  *.ogg  *.m3u  *.bmp  *.mpeg4 *.vqf /b/s/a/d > %userprofile%\Desktop\fortnite.txt
     pause
     goto :launch
+
+
+
+
+
+
+
+
+
+
+:trollface
+    cls
+    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&################&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&#BGPP5YJJ?????77777777 |lllllll~~^::.::::::^^~l?P#@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@@@@@@@@@&#G5J?7l~~~~^^^^^^^~~~~~^^^^^^^^^^^^^::::::^~~ll~:          .lG@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@@@@@@B57^.^~^~llll~~^^^^^~~ll777777l~^^^^^^^^^~~~llll~^^^l7l~.         7&@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@@@#Y~.    :   ..::^^^^^^:::::::..      .^^^^^~~~~~~~~ll77l~^~l7~.       ^B@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@B7.       ^ll~~^^^^^^~~l77.           :?l       ...:^^~~ll777~:^~~:.     :G@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@&^        77:.          ~7.           .5:                 :~l~^l~. ..      .G@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@#.       :^              7~           .~    .^~77????7l~^.   ^: .:.         .P@@@@@@@@@@@@@"
+    echo "@@@@@@@@&l           .:~llll~^.   ~l             :75BBBG5B@@@@@@&&#GJ^                 J@@@@@@@@@@@@"
+    echo "@@@@@@&P^ .   .... :JB&BGGB&@&#G5?^.           ~P&#Yl:...7@@@@@@@@PYG&5: :^::.     .^^^:?&@@@@@@@@@@"
+    echo "@@@@@5~~7J7~^:^^~^ ~PGBGGBB#&&@@@@&P7?Y7      ^@@G:.^?PB#BBGP555PGGGG&&J ^7?J:  ..:^~~~ll7J5G&@@@@@@"
+    echo "@@@B~l?7ll^           ..:::^^~l7JP&@#PY~      .7G##BG5?l^:. ~P?:   .:^:  :::lJPGGGGGPY7:  .^llY&@@@@"
+    echo "@@#^?l:J~^7Y5P5YJl^.              P@l            :l:        .Y#&GJl^::^~?YB&@#P7~~^^l?5#Gl   ^.^G@@@"
+    echo "@@Y7l l~ ?GPYJ??JB@#5ll5B~       ^B@l                         .~?5PPPPPP5Y?l^   GG     :5@Y  .l .B@@"
+    echo "@@YY: 7^ .    75 .5GGGP57.    .7G&#5:           ^l~^:  :                   .^75B@@P~.    P@7 .7  7@@"
+    echo "@@BYl :?^    :B@~          .~5#&Y~.            .YPGBBGl?^^^^^^^.      .^7YG##GY7l#@@#57: 5@J .l  7@@"
+    echo "@@@BP~:^l:  :B@@?      .:~7P@&@#^         ^7JYYJ?~  5@? :::...:  :~?5G#&&GJ~.   7&#?7JY~l@B: ~~  G@@"
+    echo "@@@@#J~l77..B@#&#J^   ^l~^.:7^~P#J:   :.  ?55YYYPJ.P&B:   .:~7YPB###G#@J.     ^5&@J     G5. ^5 .5@@@"
+    echo "@@@@@&7  : ?@&G&&#&GJ~:         ~P#GYGG:          :??l7J5GBBBP5?l^: :#@? :~7YG&@@P~     :.:~7^7#@@@@"
+    echo "@@@@@@&^   5@&@#~J@#G&&B5J?l~^::..^J5J^::^^~l?JYPGBBBB&@G~^.      .lB@&###BGG&@Bl       .::~JB@@@@@@"
+    echo "@@@@@@@Y   G@&@? 5@7 :~G@#PB##BB##BBBBBBGG&&BP5J7l~^: 7@B   .^~7YP#@@&&#J^ ~B@Y.         ^J#@@@@@@@@"
+    echo "@@@@@@@G   G@&@P7#@J  ~&&~  ....?@&l::.. .##.         .B@55B#&@@@&BY5@#.  J@#l          l#@@@@@@@@@@"
+    echo "@@@@@@@B.  5@&&@@&&#P5G@#J7l~~~^?@G~~~~~~l#&l^~~l7JYPGB&&@@&#B5Jl:  ^&#7JB@5:          ~&@@@@@@@@@@@"
+    echo "@@@@@@@B.  7@&&&&&&&@@@&&@@@@@&&&&&&&&&&&&&&&&@@@@@@@&B5B@Y:.        ?&@@G~           :B@@@@@@@@@@@@"
+    echo "@@@@@@@G   :#@B&@&&@&&&@@&&&@@@@&&&&@@@@@@@@&&#GP5Jl^:  Y@P       ^?G&&P~            ^B@@@@@@@@@@@@@"
+    echo "@@@@@@@5    ?@BJB@5J&@B5B#&&BGGG#@&#PPP5YJ7l##:         :G@P.  ^?G&@G?:            :J&@@@@@@@@@@@@@@"
+    echo "@@@@@@@?     Y@BP&B.~&#7 :B@Y   :J&&:      .#&^          .G@PYB&#P?:   .    ..   ^Y#@@@@@@@@@@@@@@@@"
+    echo "@@@@@@&^      ?#@&GJl5@&~ ^#@J    Y@?      .B@l   ..^~7JPG#&#PJ~. .^~~^^^l??l::7P&@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@B.       .~JPB##&@&BG#@@PYJ?5@#JJ???JY#@#BGBB####BPJl:..:~77l~~l?JJ7~~?P&@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@P    .    :   .:^~l7?JJY555PP5PPPPPP55YJJ??7l~^..  .^l77lll7??7l^~75B@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@J   :?    ^J7^.        :^^^^^^^^:^^^^.       .:^~77?77777l~^^~?5B@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@?   .l^.   .~?J?7l~^::........:.....::^^~~ll7???77ll~^:.^lJG#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@7     ^77l~^.  .:::::::.......:::::^^~~llll~~^:..  .~?P#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@5       .^~l777ll~~^^^^^^^^^^^^^^^:::..        .~JG#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@P^                                  .:^~^^^lJG#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@&P7:                        ..^~?YPB&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@@&BPY?7l~^^^^^^^^~~l7?J5PGB#&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    echo "@@@@@@@@@@@@@@@@@@@@@&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    timeout /t 1
+    goto :back
