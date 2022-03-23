@@ -107,9 +107,16 @@ if "%forensics%"=="n" (
     net accounts /MINPWAGE:15
     net accounts /UNIQUEPW:24
 
-    rem finds and uses pass.cfg to enable complexity requirements
-    dir pass.cfg /b/s/a/d | set passLoc=
-    secedit.exe /configure /cfg %passLoc% /areas SECURITYPOLICY
+    rem shitty way to create a basic config file in C:/  
+    echo [Unicode] > C:\pass.cfg
+    echo Unicode=yes >> C:\pass.cfg
+    echo [System Access] >> C:\pass.cfg
+    echo PasswordComplexity=1 >> C:\pass.cfg
+    echo [Version] >> C:\pass.cfg
+    echo signature="$CHICAGO$" >> C:\pass.cfg
+    echo Revision=1 >> C:\pass.cfg
+    rem executes the shitty config file
+    secedit.exe /configure /cfg C:\pass.cfg /areas SECURITYPOLICY
     rem Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled true
     rem Set-ADDefaultDomainPasswordPolicy -ReversibleEncryptionEnabled false
     rem Set-ADDefaultDomainPasswordPolicy -PasswordHistoryCount 24
