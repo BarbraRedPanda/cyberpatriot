@@ -59,9 +59,12 @@ if %errorlevel%==0 (
     goto :launch
 
 :lock
+    ::changes lockout duration
     net accounts /LOCKOUTTHRESHOLD:5
     net accounts /LOCKOUTDURATION:30
     net accounts /LOCKOUTWINDOW:30
+    ::doesn't show last logged in
+    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v dontdisplaylastusername /t REG_DWORD /d 1 /f
     pause
     goto :launch
 
@@ -145,6 +148,12 @@ if %errorlevel%==0 (
 :clear
     :: clears all of the files in the "BadFiles.txt" file from the :rm method
     :: Allows the user to change the BadFiles.txt if there are any necessary files in the directory
+    for /F "usebackq delims=" %%A in ("C:/Users/%username%/Desktop/BadFiles.txt") do (
+        set "filepath=%%A"
+        echo Deleting: !filepath!
+        del "!filepath!"
+    )
+
     pause
     goto :launch
 
