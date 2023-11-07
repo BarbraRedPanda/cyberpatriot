@@ -29,21 +29,19 @@ if %errorlevel%==0 (
     echo #-------------------------------------------------------------------------------#
     
     set /p choice=Choose an option: 
-        if "%choice"=="0" goto :pass
-        if "%choice"=="1" goto :lock
-        if "%choice"=="2" goto :audit
-        if "%choice"=="3" goto :fw 
-        if "%choice"=="4" goto :remote
-        if "%choice"=="5" goto :guest
-        if "%choice"=="6" goto :rm
-        if "%choice"=="7" goto :clear
-        if "%choice"=="8" goto :
-        if "%choice"=="9" goto :
+        if "%choice%"=="0" goto :pass
+        if "%choice%"=="1" goto :lock
+        if "%choice%"=="2" goto :audit
+        if "%choice%"=="3" goto :fw 
+        if "%choice%"=="4" goto :remote
+        if "%choice%"=="5" goto :guest
+        if "%choice%"=="6" goto :rm
+        if "%choice%"=="7" goto :clear
         else goto :launch
         
 :pass
     :: pass requirements
-    net accounts /MINPWLEN:8
+    net accounts /MINPWLEN:14
     net accounts /MAXPWAGE:30
     net accounts /MINPWAGE:15
     net accounts /UNIQUEPW:24
