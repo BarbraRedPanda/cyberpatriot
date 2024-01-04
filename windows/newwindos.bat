@@ -46,7 +46,7 @@ if %errorlevel%==0 (
     net accounts /MINPWAGE:15
     net accounts /UNIQUEPW:24
 
-    rem change passes
+    rem change passes (note, in an actual scenario you wouldn't make them the same)
     for /f "tokens=*" %%a in ('type %path%resources\users.txt') do (
         net user "%%a" "LarryKedigh#1Fan!!!"
         C:\Windows\System32\wbem\wmic UserAccount where Name="%%a" set PasswordExpires=True
@@ -67,6 +67,7 @@ if %errorlevel%==0 (
     goto :launch
 
 :audit
+    ::audits all LocalSecPol success/failures 
     auditpol /set /category:* /success:enable
     auditpol /set /category:* /failure:enable
 
@@ -112,6 +113,7 @@ if %errorlevel%==0 (
 :rm
     :: creates a new rich-text (.txt) file (called "BadFiles.txt") on current user's desktop and lists all items of
     :: goofy file types in the 'C:/Users/' directory
+    ::need to somehow exclude %appdata% in a terse way
     cd C:/Users
     dir /b/s/a/d *.txt >> C:/Users/%username%/Desktop/BadFiles.txt
     dir /b/s/a/d *.mp3 >> C:/Users/%username%/Desktop/BadFiles.txt

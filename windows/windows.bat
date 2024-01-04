@@ -15,14 +15,14 @@ net session
 if %errorlevel%==0 (
  	echo "We're in. hacking itno mainframe. initiansting fortniteburger."
 ) else (
-    echo "you suck"
+    echo "Make sure to run as administrator"
  	pause
     exit
 )
 
 cls
 
-set /p forensics=have you read the readme and the forensics (y/n)?
+set /p forensics=Have you read the README and the forensics (y/n)?
 if "%forensics%"=="y" goto :launch
 if "%forensics%"=="n" (
     echo "do them now"
@@ -107,7 +107,7 @@ if "%forensics%"=="n" (
     net accounts /MINPWAGE:15
     net accounts /UNIQUEPW:24
 
-    rem shitty way to create a basic config file in C:/  
+    rem  create a basic config file in C:/  
     echo [Unicode] > C:\pass.cfg
     echo Unicode=yes >> C:\pass.cfg
     echo [System Access] >> C:\pass.cfg

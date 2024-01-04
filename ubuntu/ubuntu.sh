@@ -47,7 +47,7 @@
 
 #----------------------------------------
 #   BarbraRedPanda
-#   2021 Cyberpatriot Ubuntu Script
+#   2023 Cyberpatriot Ubuntu Script
 #----------------------------------------
 
 #update
