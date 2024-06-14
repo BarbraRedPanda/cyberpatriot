@@ -5,7 +5,7 @@ goto :main
 color 08
 
 :: checks for admin
-net session
+net sessions
 if %errorlevel%==0 (
  	echo "We're in. hacking itno mainframe. initiansting fortniteburger."
 ) else (
@@ -40,11 +40,8 @@ if %errorlevel%==0 (
         else goto :launch
         
 :pass
-    :: pass requirements
-    net accounts /MINPWLEN:14
-    net accounts /MAXPWAGE:30
-    net accounts /MINPWAGE:15
-    net accounts /UNIQUEPW:24
+    :: Sets password requirements
+    net accounts /minpwlen:8 /maxpwage:30 /minpwage:15 /uniquepw:24
 
     rem change passes (note, in an actual scenario you wouldn't make them the same)
     for /f "tokens=*" %%a in ('type %path%resources\users.txt') do (
